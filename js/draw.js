@@ -1,7 +1,7 @@
 function draw() {
-    background("#f1f1f1")
-
     if (window.isWPEReady == false) return
+    
+    background(window.getBackgroundColor())
 
     let canvas = mainCanvas()
     window.getHasShadow() && drawShadow(canvas)
