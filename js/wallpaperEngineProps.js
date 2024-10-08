@@ -28,12 +28,15 @@ window.wallpaperPropertyListener = {
             window.getColorVelocity = () => { return properties.colorvelocity.value }
         }
         if (properties.color1) {
+            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.color1.value) == false) return
             window.getColor1 = () => { return properties.color1.value }
         }
         if (properties.color2) {
+            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.color2.value) == false) return
             window.getColor2 = () => { return properties.color2.value }
         }
         if (properties.canvasmargincolor) {
+            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.canvasmargincolor.value) == false) return
             window.getCanvasMarginColor = () => { return properties.canvasmargincolor.value }
         }
         if (properties.backgroundcolor) {
