@@ -19,13 +19,13 @@ window.wallpaperPropertyListener = {
             window.getRandomY = () => { return properties.randomy.value }
         }
         if (properties.animationvelocityx) {
-            window.getAnimationVelocityX = () => { return properties.animationvelocityx.value }
+            window.getAnimationVelocityX = () => { return map(properties.animationvelocityx.value, 0, 1, 0, 0.1) }
         }
         if (properties.animationvelocityy) {
-            window.getAnimationVelocityY = () => { return properties.animationvelocityy.value }
+            window.getAnimationVelocityY = () => { return map(properties.animationvelocityy.value, 0, 1, 0, 0.1) }
         }
         if (properties.colorvelocity) {
-            window.getColorVelocity = () => { return properties.colorvelocity.value }
+            window.getColorVelocity = () => { return map(properties.colorvelocity.value, 0, 1, 0, 0.2) }
         }
         if (properties.color1) {
             if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.color1.value) == false) return
@@ -47,6 +47,9 @@ window.wallpaperPropertyListener = {
         }
         if (properties.hasshadow) {
             window.getHasShadow = () => { return properties.hasshadow.value }
+        }
+        if (properties.shadowcolor) {
+            window.getShadowColor = () => {return 'rgb(' + properties.shadowcolor.value.split(' ').map(function (c) {return Math.ceil(c * 255)}) + ')';}
         }
     },
 };
