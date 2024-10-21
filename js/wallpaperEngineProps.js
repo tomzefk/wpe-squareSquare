@@ -1,6 +1,5 @@
 window.wallpaperPropertyListener = {
     applyUserProperties: function (properties) {
-        console.log(properties)
         window.isWPEReady = true
 
         if (properties.size) {
@@ -28,19 +27,25 @@ window.wallpaperPropertyListener = {
             window.getColorVelocity = () => { return map(properties.colorvelocity.value, 0, 1, 0, 0.2) }
         }
         if (properties.color1) {
-            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.color1.value) == false) return
-            window.getColor1 = () => { return properties.color1.value }
+            window.getColor1 = () => {
+                let rgb = 'rgb(' + properties.color1.value.split(' ').map(function (c) { return Math.ceil(c * 255) }) + ')'
+                if (/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i.test(rgb) == false) return
+                return rgb;
+            }
         }
         if (properties.color2) {
-            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.color2.value) == false) return
-            window.getColor2 = () => { return properties.color2.value }
+            window.getColor2 = () => {
+                let rgb = 'rgb(' + properties.color2.value.split(' ').map(function (c) { return Math.ceil(c * 255) }) + ')'
+                if (/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$/i.test(rgb) == false) return
+                return rgb;
+            }
         }
         if (properties.canvasmargincolor) {
-            if(/^#(?:[0-9a-fA-F]{6})$/.test(properties.canvasmargincolor.value) == false) return
+            if (/^#(?:[0-9a-fA-F]{6})$/.test(properties.canvasmargincolor.value) == false) return
             window.getCanvasMarginColor = () => { return properties.canvasmargincolor.value }
         }
         if (properties.backgroundcolor) {
-            window.getBackgroundColor = () => {return 'rgb(' + properties.backgroundcolor.value.split(' ').map(function (c) {return Math.ceil(c * 255)}) + ')';}
+            window.getBackgroundColor = () => { return 'rgb(' + properties.backgroundcolor.value.split(' ').map(function (c) { return Math.ceil(c * 255) }) + ')'; }
         }
         if (properties.divisionborderwidth) {
             window.getSquareMargin = () => { return properties.divisionborderwidth.value }
@@ -49,7 +54,7 @@ window.wallpaperPropertyListener = {
             window.getHasShadow = () => { return properties.hasshadow.value }
         }
         if (properties.shadowcolor) {
-            window.getShadowColor = () => {return 'rgb(' + properties.shadowcolor.value.split(' ').map(function (c) {return Math.ceil(c * 255)}) + ')';}
+            window.getShadowColor = () => { return 'rgb(' + properties.shadowcolor.value.split(' ').map(function (c) { return Math.ceil(c * 255) }) + ')'; }
         }
     },
 };

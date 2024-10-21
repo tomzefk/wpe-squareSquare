@@ -1,6 +1,6 @@
 function draw() {
     if (window.isWPEReady == false) return
-    
+
     background(window.getBackgroundColor())
 
     let canvas = mainCanvas()
@@ -54,63 +54,26 @@ function draw() {
                     ? spaceLeftX
                     : (spaceLeftX / (divisions() - x) * fpre)
 
+            
+            let currentColor = parseRGB(window.getColor1())
+            let nextColor = parseRGB(window.getColor2())
 
-            let currentColor = hexToHsl(window.getColor1())
-            let nextColor = hexToHsl(window.getColor2())
-
-            let minHue = Math.min(currentColor.h, nextColor.h)
-            let maxHue = Math.max(currentColor.h, nextColor.h)
-
-            let minSat = Math.min(currentColor.s, nextColor.s)
-            let maxSat = Math.max(currentColor.s, nextColor.s)
-
-            let minLight = Math.min(currentColor.l, nextColor.l)
-            let maxLight = Math.max(currentColor.l, nextColor.l)
-
-
-            let colorGradH = constrain(
-                lerp
-                    (minHue,
-                        maxHue,
-                        (y + x) / (divisions() * 2)
-                    ),
-                minHue,
-                maxHue
-            )
-
-            let colorGradS = constrain(
-                lerp
-                    (minSat,
-                        maxSat,
-                        (y + x) / (divisions() * 2)
-                    ),
-                minSat,
-                maxSat
-            )
-
-            let colorGradL = constrain(
-                lerp
-                    (minLight,
-                        maxLight,
-                        (y + x) / (divisions() * 2)
-                    ),
-                minLight,
-                maxLight
-            )
-
+            let colorGradR = lerp(currentColor[0], nextColor[0], map(y + x, 0, (divisions() * 2) - 2, 0, 1))
+            let colorGradG = lerp(currentColor[1], nextColor[1], map(y + x, 0, (divisions() * 2) - 2, 0, 1))
+            let colorGradB = lerp(currentColor[2], nextColor[2], map(y + x, 0, (divisions() * 2) - 2, 0, 1))            
 
             push();
-                stroke('#000')
-                getSquareMargin() != 0
-                    ? strokeWeight(getSquareMargin())
-                    : noStroke()
-                fill(hslToHex(colorGradH + (f * 64), colorGradS, colorGradL))
-                rect(
-                    canvas.pos.x + (window.getUsableSpaceX() - spaceLeftX),
-                    canvas.pos.y + (window.getUsableSpaceY() - spaceLeftY),
-                    widthX + 0,
-                    heightY + 0,
-                );
+            stroke('#000')
+            getSquareMargin() != 0
+                ? strokeWeight(getSquareMargin())
+                : noStroke()
+            fill(`rgb(${colorGradR + (f*64)}, ${colorGradG + (f*64)}, ${colorGradB + (f*64)})`)
+            rect(
+                canvas.pos.x + (window.getUsableSpaceX() - spaceLeftX),
+                canvas.pos.y + (window.getUsableSpaceY() - spaceLeftY),
+                widthX + 0,
+                heightY + 0,
+            );
             pop();
 
 
