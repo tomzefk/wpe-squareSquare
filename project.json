@@ -1,0 +1,185 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "[b]Square²[/b] is a minimalist yet vibrant wallpaper featuring a customizable grid of squares, built using HTML, JavaScript, and the q5xjs library (a lightweight alternative to p5.js). This wallpaper is designed to give you full control over the visual elements, from colors to grid size, shadows, and borders, offering endless personalization.\r\n\r\n[h2]Key Features[/h2]\r\n[list]\r\n    [*][b]Complete Customization:[/b] Use Wallpaper Engine’s interface to adjust color gradients, grid size, shadows, and more to create a style that suits you.\r\n\r\n    [*][b]Built with q5xjs:[/b] Utilizing the power of the q5xjs library, this wallpaper delivers high performance while maintaining smooth animations.\r\n\r\n    [*][b]Lightweight & Efficient:[/b] At just 15kb, [b]Square²[/b] runs smoothly on all setups without consuming excessive resources.\r\n\r\n    [*][b]Interactive and Dynamic:[/b] Easily tweak the design elements directly from Wallpaper Engine sliders to suit your aesthetic preference.\r\n\r\n    [*][b]Open Source:[/b] [b]Square²[/b] is open source and available for further customization or contributions on [url=https://github.com/tomzefk/wpe-squareSquare]GitHub[/url].\r\n[/list]\r\n\r\n\r\n[h3]Have an idea or suggestion?[/h3]\r\nFeel free to leave a comment or message me with ideas for updates or new features. I'm open to feedback and would love to hear your suggestions!\r\n\r\nGet creative with [b]Square²[/b] and make your desktop truly unique!\r\n\r\n\r\n[hr][/hr][i]Made with ❤  by tomzefk.[/i]",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"animationvelocityx" : 
+			{
+				"fraction" : true,
+				"index" : 7,
+				"max" : 1,
+				"min" : 0,
+				"order" : 107,
+				"precision" : 3,
+				"step" : 0.01,
+				"text" : "Velocity X-axis",
+				"type" : "slider",
+				"value" : 0.01
+			},
+			"animationvelocityy" : 
+			{
+				"fraction" : true,
+				"index" : 8,
+				"max" : 1,
+				"min" : 0,
+				"order" : 108,
+				"precision" : 3,
+				"step" : 0.01,
+				"text" : "Velocity Y-axis",
+				"type" : "slider",
+				"value" : 0.01
+			},
+			"backgroundcolor" : 
+			{
+				"index" : 14,
+				"order" : 114,
+				"text" : "Background Color",
+				"type" : "color",
+				"value" : "0.9450980392156862 0.9450980392156862 0.9450980392156862"
+			},
+			"canvasmargin" : 
+			{
+				"fraction" : false,
+				"index" : 1,
+				"max" : 8,
+				"min" : 0,
+				"order" : 101,
+				"text" : "Canvas Border Width",
+				"type" : "slider",
+				"value" : 4
+			},
+			"canvasmargincolor" : 
+			{
+				"index" : 2,
+				"order" : 102,
+				"text" : "Canvas Border Color",
+				"type" : "textinput",
+				"value" : "#222222"
+			},
+			"color1" : 
+			{
+				"index" : 9,
+				"order" : 109,
+				"text" : "Color 1",
+				"type" : "color",
+				"value" : "0.9803921568627451 0.5450980392156862 1"
+			},
+			"color2" : 
+			{
+				"index" : 10,
+				"order" : 110,
+				"text" : "Color 2",
+				"type" : "color",
+				"value" : "0.16862745098039217 1 0.5333333333333333"
+			},
+			"colorvelocity" : 
+			{
+				"fraction" : true,
+				"index" : 11,
+				"max" : 1,
+				"min" : 0,
+				"order" : 111,
+				"precision" : 3,
+				"step" : 0.01,
+				"text" : "Color Velocity",
+				"type" : "slider",
+				"value" : 0.01
+			},
+			"divisionborderwidth" : 
+			{
+				"fraction" : true,
+				"index" : 4,
+				"max" : 8,
+				"min" : 0,
+				"order" : 104,
+				"precision" : 2,
+				"step" : 0.1,
+				"text" : "Division Border Width",
+				"type" : "slider",
+				"value" : 1
+			},
+			"divisions" : 
+			{
+				"fraction" : false,
+				"index" : 3,
+				"max" : 16,
+				"min" : 4,
+				"order" : 103,
+				"text" : "Divisions",
+				"type" : "slider",
+				"value" : 6
+			},
+			"hasshadow" : 
+			{
+				"index" : 12,
+				"order" : 112,
+				"text" : "Enable Shadow",
+				"type" : "bool",
+				"value" : true
+			},
+			"randomx" : 
+			{
+				"fraction" : false,
+				"index" : 5,
+				"max" : 8,
+				"min" : 0,
+				"order" : 105,
+				"text" : "Movement X-axis",
+				"type" : "slider",
+				"value" : 1
+			},
+			"randomy" : 
+			{
+				"fraction" : false,
+				"index" : 6,
+				"max" : 8,
+				"min" : 0,
+				"order" : 106,
+				"text" : "Movement Y-axis",
+				"type" : "slider",
+				"value" : 1
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"shadowcolor" : 
+			{
+				"index" : 13,
+				"order" : 113,
+				"text" : "Shadow Color",
+				"type" : "color",
+				"value" : "0.12549019607843137 0.12549019607843137 0.12549019607843137"
+			},
+			"size" : 
+			{
+				"fraction" : false,
+				"index" : 0,
+				"max" : 100,
+				"min" : 1,
+				"order" : 100,
+				"text" : "Size",
+				"type" : "slider",
+				"value" : 40
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
+	"tags" : [ "Abstract" ],
+	"title" : "Square² – Fully Customizable Animated Grid Wallpaper",
+	"type" : "web",
+	"version" : 8,
+	"visibility" : "public",
+	"workshopid" : "3344888096",
+	"workshopurl" : "steam://url/CommunityFilePage/3344888096"
+}
